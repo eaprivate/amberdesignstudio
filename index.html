@@ -115,19 +115,11 @@
             box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08);
         }
 
-        .card-img-placeholder {
+        .card img {
             width: 100%;
             height: 180px;
-            background-color: var(--bg-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 1rem;
+            object-fit: cover;
             border-bottom: 1px solid var(--border-color);
-            text-align: center;
-            padding: 0 15px;
         }
 
         .card-content {
@@ -229,7 +221,7 @@
         <div class="grid">
             <!-- 1. Cosmographos Watch Face -->
             <div class="card">
-                <div class="images/cosmographos_icon.jpg">Cosmographos Preview</div>
+                <img src="images/cosmographos_icon.jpg" alt="Cosmographos Watch Face">
                 <div class="card-content">
                     <span class="tag">Wear OS Watch Face</span>
                     <h3>Cosmographos Watch Face</h3>
@@ -240,7 +232,7 @@
 
             <!-- 2. Neon Analog Watch Face -->
             <div class="card">
-                <div class="images/neon_analog_icon.jpg">Neon Analog Preview</div>
+                <img src="images/neon_analog_icon.jpg" alt="Neon Analog Watch Face">
                 <div class="card-content">
                     <span class="tag">Wear OS Watch Face</span>
                     <h3>Neon Analog Watch Face</h3>
@@ -251,7 +243,7 @@
 
             <!-- 3. Astronomicon Watch Face -->
             <div class="card">
-                <div class="images/Astronomicon_icoon.jpg">Astronomicon Preview</div>
+                <img src="images/Astronomicon_icoon.jpg" alt="Astronomicon Watch Face">
                 <div class="card-content">
                     <span class="tag">Wear OS Watch Face</span>
                     <h3>Astronomicon Watch Face</h3>
@@ -262,7 +254,7 @@
 
             <!-- 4. Minimalist Aura Watch Face -->
             <div class="card">
-                <div class="images/minimalist_aura_icon.jpg">Minimalist Aura Preview</div>
+                <img src="images/minimalist_aura_icon.jpg" alt="Minimalist Aura Watch Face">
                 <div class="card-content">
                     <span class="tag">Wear OS Watch Face</span>
                     <h3>Minimalist Aura Watch Face</h3>
@@ -273,7 +265,7 @@
 
             <!-- 5. The Stellar Horizon Watch Face -->
             <div class="card">
-                <div class="images/Thestellarhorizon_icon.jpg">The Stellar Horizon Preview</div>
+                <img src="images/Thestellarhorizon_icon.jpg" alt="The Stellar Horizon Watch Face">
                 <div class="card-content">
                     <span class="tag">Wear OS Watch Face</span>
                     <h3>The Stellar Horizon Watch Face</h3>
@@ -284,7 +276,7 @@
 
             <!-- 6. The Legacy Watch Face -->
             <div class="card">
-                <div class="images/legacy_icon.jpg">The Legacy Preview</div>
+                <img src="images/legacy_icon.jpg" alt="The Legacy Watch Face">
                 <div class="card-content">
                     <span class="tag">Wear OS Watch Face</span>
                     <h3>The Legacy Watch Face</h3>
@@ -295,12 +287,23 @@
 
             <!-- 7. Amber Slots -->
             <div class="card">
-                <div class="images/amber_slots_app_icon.jpg">Amber Slots Preview</div>
+                <img src="images/amber_slots_app_icon.jpg" alt="Amber Slots">
                 <div class="card-content">
                     <span class="tag">Android Game</span>
                     <h3>Amber Slots</h3>
                     <p>An exciting arcade slot gaming experience packed with lively mechanics, rich animations, and fun campaign progression.</p>
                     <a href="https://play.google.com/store/apps/details?id=com.w.amberslots" target="_blank" class="btn">View on Google Play</a>
+                </div>
+            </div>
+
+            <!-- 8. Smash Blocks -->
+            <div class="card">
+                <img src="images/smash_blocks_icon.jpg" alt="Smash Blocks">
+                <div class="card-content">
+                    <span class="tag">Android Game</span>
+                    <h3>Smash Blocks</h3>
+                    <p>An energetic, physics-based action-arcade game featuring high-fidelity particle systems and deep campaign progression.</p>
+                    <a href="#" class="btn">View on Google Play</a>
                 </div>
             </div>
         </div>
