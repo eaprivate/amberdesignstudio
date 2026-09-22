@@ -184,8 +184,9 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 350px));
             gap: 25px;
+            justify-content: start;
         }
 
         /* Project Cards */
@@ -198,6 +199,8 @@
             flex-direction: column;
             justify-content: space-between;
             transition: box-shadow 0.2s ease;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .card:hover {
