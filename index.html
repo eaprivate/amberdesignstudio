@@ -54,8 +54,12 @@
             gap: 10px;
         }
 
-        .logo span {
-            color: var(--primary);
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
         }
 
         .nav-links {
@@ -289,7 +293,6 @@
 
         /* Contact Section */
         .contact-section {
-            background-content: #ffffff;
             background-color: #ffffff;
             padding: 60px 20px;
             border-top: 1px solid var(--border-color);
@@ -439,7 +442,10 @@
     <!-- Navigation Header -->
     <nav>
         <div class="nav-container">
-            <a href="#home" class="logo"><span>◆</span> Amber Design Studio</a>
+            <a href="#home" class="logo">
+                <img src="images/amber_icon.png" alt="Amber Design Studio Logo" class="logo-icon">
+                Amber Design Studio
+            </a>
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <div class="dropdown">
@@ -630,10 +636,8 @@
             </div>
             <div class="about-text">
                 <h2>Who I Am</h2>
-                <p>Hello! I am <strong>Aris Efstathiou</strong>, Creative Director. I lead and execute on various visual and digital strategies, bringing a strong background in graphic design, video editing, and animation. My expertise lies in crafting engaging visual content, directing campaigns, and enhancing online presence.</p>
-                
                 <div class="about-quote">
-                    "Amber Design Studio was born from a deep love for design and development. More than just a project, it is where art blends seamlessly with a fast-paced world. While I am involved in many professional side ventures, this one is entirely my own—something deeply expressive, personal, and unique."
+                <p>Hello! I am Aris Efstathiou , Creative Director. I lead and execute on various visual and digital strategies, bringing a strong background in graphic design, video editing, and animation. My expertise lies in crafting engaging visual content, directing campaigns, and enhancing online presence.</p> "Amber Design Studio was born from a deep love for design and development. More than just a project, it is where art blends seamlessly with a fast-paced world. While I am involved in many professional side ventures, this one is entirely my own—something deeply expressive, personal, and unique."
                 </div>
 
                 <p><strong>Education:</strong></p>
@@ -641,7 +645,7 @@
                     <li><strong>University of Patras</strong> — Master's Degree, Electronics and Information Processing</li>
                     <li><strong>University of the Peloponnese</strong> — Bachelor's Degree, Computer Science</li>
                 </ul>
-
+                    <li><strong>My other works can be found below..</strong></li>
                 <div class="social-btns">
                     <a href="https://www.behance.net/arefsta" target="_blank" class="social-btn">Behance Portfolio</a>
                 </div>
