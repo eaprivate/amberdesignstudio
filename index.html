@@ -60,7 +60,7 @@
 
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             align-items: center;
             flex-wrap: wrap;
         }
@@ -75,6 +75,60 @@
 
         .nav-links a:hover {
             color: var(--primary);
+        }
+
+        /* Dropdown Menu for Services */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-toggle {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dropdown-toggle:hover {
+            color: var(--primary);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            margin-top: 8px;
+            padding: 8px 0;
+        }
+
+        .dropdown-content a {
+            color: var(--text-muted);
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--bg-light);
+            color: var(--primary);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         /* Banner Section */
@@ -224,13 +278,37 @@
             background-color: var(--primary-hover);
         }
 
+        /* Contact Section */
+        .contact-section {
+            background-color: #ffffff;
+            padding: 60px 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-container h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .contact-container p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+        }
+
         /* About Section (At the Bottom) */
         .about-section {
-            background-color: #ffffff;
+            background-color: #fdfdfd;
             padding: 80px 20px;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
-            margin-top: 60px;
         }
 
         .about-container {
@@ -334,17 +412,24 @@
         }
     </style>
 </head>
-<body>
+<body id="home">
 
     <!-- Navigation Header -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo"><span>◆</span> Amber Design Studio</a>
+            <a href="#home" class="logo"><span>◆</span> Amber Design Studio</a>
             <div class="nav-links">
-                <a href="#apps">Apps</a>
-                <a href="#games">Games</a>
-                <a href="#watchfaces">Watch Faces</a>
-                <a href="#about">About Me</a>
+                <a href="#home">Home</a>
+                <div class="dropdown">
+                    <span class="dropdown-toggle">Services ▾</span>
+                    <div class="dropdown-content">
+                        <a href="#apps">Apps</a>
+                        <a href="#games">Games</a>
+                        <a href="#watchfaces">Wear OS Faces</a>
+                    </div>
+                </div>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
@@ -500,7 +585,16 @@
 
     </main>
 
-    <!-- Who Am I Section (Moved to Bottom) -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Get in Touch</h2>
+            <p>Have questions, feedback, or collaboration inquiries regarding our apps or watch faces? Reach out directly.</p>
+            <a href="mailto:contact@amberdesignstudio.com" class="btn">Contact via Email</a>
+        </div>
+    </section>
+
+    <!-- Who Am I Section (At the Bottom) -->
     <section id="about" class="about-section">
         <div class="about-container">
             <div class="about-image-wrapper">
@@ -509,13 +603,13 @@
             </div>
             <div class="about-text">
                 <h2>Who I Am</h2>
-                <p>Hello! I am <strong>Aris Efstathiou</strong>, a Creative Director, Art Director, Graphic Designer, Video Editor, 2D Animator, and Software Developer based in Greece.</p>
-                <p>As a Creative Director, I lead and execute on various visual and digital strategies, bringing a strong background in graphic design, video editing, and animation. My expertise lies in crafting engaging visual content, directing campaigns, and enhancing online presence, alongside business management, customer relations, and revenue optimization.</p>
+                <p>Hello! I am <strong>Aris Efstathiou</strong>[cite: 1], a Creative Director, Art Director, Graphic Designer, Video Editor, 2D Animator, and Software Developer based in Greece[cite: 1].</p>
+                <p>As a Creative Director, I lead and execute on various visual and digital strategies, bringing a strong background in graphic design, video editing, and animation[cite: 1]. My expertise lies in crafting engaging visual content, directing campaigns, and enhancing online presence, alongside business management, customer relations, and revenue optimization[cite: 1].</p>
                 
                 <p><strong>Education:</strong></p>
                 <ul class="edu-list">
-                    <li><strong>University of Patras</strong> — Master's Degree, Electronics and Information Processing</li>
-                    <li><strong>University of the Peloponnese</strong> — Bachelor's Degree, Computer Science</li>
+                    <li><strong>University of Patras</strong> — Master's Degree, Electronics and Information Processing[cite: 2]</li>
+                    <li><strong>University of the Peloponnese</strong> — Bachelor's Degree, Computer Science[cite: 2]</li>
                 </ul>
 
                 <div class="social-btns">
