@@ -77,12 +77,10 @@
             color: var(--primary);
         }
 
-        /* Dropdown Menu for Services with bridge for hover stability */
+        /* Dropdown Menu with Slide & Fade Animation */
         .dropdown {
             position: relative;
             display: inline-block;
-            padding-bottom: 10px; /* Creates an invisible bridge extending down to the menu */
-            margin-bottom: -10px;
         }
 
         .dropdown-toggle {
@@ -95,6 +93,10 @@
             display: flex;
             align-items: center;
             gap: 4px;
+            background: none;
+            border: none;
+            padding: 0;
+            font-family: inherit;
         }
 
         .dropdown-toggle:hover {
@@ -102,7 +104,8 @@
         }
 
         .dropdown-content {
-            display: none;
+            visibility: hidden;
+            opacity: 0;
             position: absolute;
             background-color: #ffffff;
             min-width: 180px;
@@ -110,9 +113,18 @@
             border: 1px solid var(--border-color);
             border-radius: 6px;
             z-index: 1;
-            top: 100%;
+            top: calc(100% + 10px);
             left: 0;
             padding: 8px 0;
+            transform: translateY(-10px);
+            transition: all 0.25s ease-in-out;
+        }
+
+        .dropdown.active .dropdown-content,
+        .dropdown:hover .dropdown-content {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .dropdown-content a {
@@ -126,10 +138,6 @@
         .dropdown-content a:hover {
             background-color: var(--bg-light);
             color: var(--primary);
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
         }
 
         /* Banner Section */
@@ -190,7 +198,7 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 350px));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
             justify-content: start;
         }
@@ -422,7 +430,7 @@
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <div class="dropdown">
-                    <span class="dropdown-toggle">Services ▾</span>
+                    <button class="dropdown-toggle" aria-expanded="false">Services ▾</button>
                     <div class="dropdown-content">
                         <a href="#apps">Apps</a>
                         <a href="#games">Games</a>
@@ -614,7 +622,6 @@
     <section id="about" class="about-section">
         <div class="about-container">
             <div class="about-image-wrapper">
-                <!-- Replace 'images/my_photo.jpg' with your actual profile picture filename -->
                 <img src="images/my_photo.jpg" alt="Aris Efstathiou" class="about-image">
             </div>
             <div class="about-text">
@@ -644,5 +651,26 @@
         </div>
     </footer>
 
+    <!-- Dropdown Interactive Script (Desktop Hover + Mobile Tap) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdown = document.querySelector('.dropdown');
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                const isActive = dropdown.classList.toggle('active');
+                toggle.setAttribute('aria-expanded', isActive);
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('active');
+                    toggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
