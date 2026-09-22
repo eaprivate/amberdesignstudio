@@ -21,6 +21,7 @@
             background-color: #f9fafb;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
 
         /* Navigation Header */
@@ -61,6 +62,7 @@
             display: flex;
             gap: 20px;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -68,6 +70,7 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             font-weight: 500;
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover {
@@ -111,7 +114,7 @@
             margin: 0 auto;
         }
 
-        /* About Section (Inspired by Tinos Web) */
+        /* About Section */
         .about-section {
             background-color: #ffffff;
             padding: 80px 20px;
@@ -160,15 +163,19 @@
             margin-bottom: 15px;
         }
 
-        /* Main Content Portfolio Grid */
+        /* Main Content Portfolio Sections */
         .portfolio {
             max-width: 1100px;
             margin: 50px auto;
             padding: 0 20px;
         }
 
+        .category-section {
+            margin-bottom: 60px;
+        }
+
         .section-title {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--text-dark);
             margin-bottom: 30px;
             border-left: 4px solid var(--primary);
@@ -297,7 +304,9 @@
         <div class="nav-container">
             <a href="index.html" class="logo"><span>◆</span> Amber Design Studio</a>
             <div class="nav-links">
-                <a href="#portfolio">Apps & Watch Faces</a>
+                <a href="#apps">Apps</a>
+                <a href="#games">Games</a>
+                <a href="#watchfaces">Watch Faces</a>
                 <a href="#about">About Me</a>
             </div>
         </div>
@@ -311,7 +320,7 @@
     <!-- Hero Showcase Header -->
     <section class="hero">
         <h1>Amber Design Studio</h1>
-        <p>Attention to detail in every pixel. Discover our collection of creative Wear OS watch faces and Android games.</p>
+        <p>Attention to detail in every pixel. Discover our collection of creative Wear OS watch faces, apps, and games.</p>
     </section>
 
     <!-- About Me Section with Photo Slot -->
@@ -329,128 +338,144 @@
         </div>
     </section>
 
-    <!-- Main Grid / Featured Products -->
-    <main id="portfolio" class="portfolio">
-        <h2 class="section-title">All Apps & Watch Faces</h2>
-        
-        <div class="grid">
-            <!-- 1. Cosmographos Watch Face -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="images/cosmographos_icon.png" alt="Cosmographos Watch Face">
-                </div>
-                <div class="card-content">
-                    <span class="tag">Wear OS Watch Face</span>
-                    <h3>Cosmographos Watch Face</h3>
-                    <p>A beautifully stylized astronomical watch face showcasing real-time coordinates, weather data, and custom complications.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.cosmographos" target="_blank" class="btn">View on Google Play</a>
-                </div>
-            </div>
+    <!-- Main Categories Portfolio -->
+    <main class="portfolio">
 
-            <!-- 2. Neon Analog Watch Face -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="images/neon_analog_icon.jpg" alt="Neon Analog Watch Face">
-                </div>
-                <div class="card-content">
-                    <span class="tag">Wear OS Watch Face</span>
-                    <h3>Neon Analog Watch Face</h3>
-                    <p>A sleek, high-contrast analog watch face featuring vibrant neon accents designed for modern smartwatches.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.neon.analog" target="_blank" class="btn">View on Google Play</a>
+        <!-- CATEGORY 1: APPS -->
+        <section id="apps" class="category-section">
+            <h2 class="section-title">Android Apps</h2>
+            <div class="grid">
+                <!-- Amber Slots (App) -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="images/amber_slots_app_icon.jpg" alt="Amber Slots">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Android App</span>
+                        <h3>Amber Slots</h3>
+                        <p>An engaging digital application featuring interactive features, smooth UI transitions, and custom utility layouts.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.amberslots" target="_blank" class="btn">View on Google Play</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- 3. Astronomicon Watch Face -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="images/Astronomicon_icoon.jpg" alt="Astronomicon Watch Face">
-                </div>
-                <div class="card-content">
-                    <span class="tag">Wear OS Watch Face</span>
-                    <h3>Astronomicon Watch Face</h3>
-                    <p>An exquisite celestial-themed watch face bringing precise astronomical layouts and starry aesthetics to your wrist.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.astronomicon" target="_blank" class="btn">View on Google Play</a>
+        <!-- CATEGORY 2: GAMES -->
+        <section id="games" class="category-section">
+            <h2 class="section-title">Android Games</h2>
+            <div class="grid">
+                <!-- Smash Blocks (Game) -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="images/smash_blocks_icon.jpg" alt="Smash Blocks">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Android Game</span>
+                        <h3>Smash Blocks</h3>
+                        <p>An energetic, physics-based action-arcade game featuring high-fidelity particle systems and deep campaign progression.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.smash.blocks" target="_blank" class="btn">View on Google Play</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- 4. Minimalist Aura Watch Face -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="images/minimalist_aura_icon.jpg" alt="Minimalist Aura Watch Face">
+        <!-- CATEGORY 3: WATCH FACES -->
+        <section id="watchfaces" class="category-section">
+            <h2 class="section-title">Wear OS Watch Faces</h2>
+            <div class="grid">
+                <!-- 1. Cosmographos Watch Face -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="images/cosmographos_icon.png" alt="Cosmographos Watch Face">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Wear OS Watch Face</span>
+                        <h3>Cosmographos Watch Face</h3>
+                        <p>A beautifully stylized astronomical watch face showcasing real-time coordinates, weather data, and custom complications.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.cosmographos" target="_blank" class="btn">View on Google Play</a>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <span class="tag">Wear OS Watch Face</span>
-                    <h3>Minimalist Aura Watch Face</h3>
-                    <p>Clean lines, beautiful typography, and energy-efficient ambient design focusing purely on what matters most.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.w.strict_minimal" target="_blank" class="btn">View on Google Play</a>
-                </div>
-            </div>
 
-            <!-- 5. The Stellar Horizon Watch Face -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="images/theStellarHorizon_icon.jpg" alt="The Stellar Horizon Watch Face">
+                <!-- 2. Neon Analog Watch Face -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="images/neon_analog_icon.jpg" alt="Neon Analog Watch Face">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Wear OS Watch Face</span>
+                        <h3>Neon Analog Watch Face</h3>
+                        <p>A sleek, high-contrast analog watch face featuring vibrant neon accents designed for modern smartwatches.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.neon.analog" target="_blank" class="btn">View on Google Play</a>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <span class="tag">Wear OS Watch Face</span>
-                    <h3>The Stellar Horizon Watch Face</h3>
-                    <p>Weather your way with dynamic horizon themes, rich data indicators, and comprehensive daily fitness trackers.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.w.thestellarhorizon" target="_blank" class="btn">View on Google Play</a>
-                </div>
-            </div>
 
-            <!-- 6. The Legacy Watch Face -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="images/legacy_icon.jpg" alt="The Legacy Watch Face">
+                <!-- 3. Astronomicon Watch Face -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="images/Astronomicon_icoon.jpg" alt="Astronomicon Watch Face">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Wear OS Watch Face</span>
+                        <h3>Astronomicon Watch Face</h3>
+                        <p>An exquisite celestial-themed watch face bringing precise astronomical layouts and starry aesthetics to your wrist.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.astronomicon" target="_blank" class="btn">View on Google Play</a>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <span class="tag">Wear OS Watch Face</span>
-                    <h3>The Legacy Watch Face</h3>
-                    <p>A timeless blend of classic analog watchcraft styling coupled with modern complications and customization options.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.watchfacestudio.simple_watch" target="_blank" class="btn">View on Google Play</a>
-                </div>
-            </div>
 
-            <!-- 7. Amber Slots -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="images/amber_slots_app_icon.jpg" alt="Amber Slots">
+                <!-- 4. Minimalist Aura Watch Face -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="images/minimalist_aura_icon.jpg" alt="Minimalist Aura Watch Face">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Wear OS Watch Face</span>
+                        <h3>Minimalist Aura Watch Face</h3>
+                        <p>Clean lines, beautiful typography, and energy-efficient ambient design focusing purely on what matters most.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.w.strict_minimal" target="_blank" class="btn">View on Google Play</a>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <span class="tag">Android Game</span>
-                    <h3>Amber Slots</h3>
-                    <p>An exciting arcade slot gaming experience packed with lively mechanics, rich animations, and fun campaign progression.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.amberslots" target="_blank" class="btn">View on Google Play</a>
-                </div>
-            </div>
 
-            <!-- 8. Smash Blocks -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="images/smash_blocks_icon.jpg" alt="Smash Blocks">
+                <!-- 5. The Stellar Horizon Watch Face -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="images/theStellarHorizon_icon.jpg" alt="The Stellar Horizon Watch Face">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Wear OS Watch Face</span>
+                        <h3>The Stellar Horizon Watch Face</h3>
+                        <p>Weather your way with dynamic horizon themes, rich data indicators, and comprehensive daily fitness trackers.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.w.thestellarhorizon" target="_blank" class="btn">View on Google Play</a>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <span class="tag">Android Game</span>
-                    <h3>Smash Blocks</h3>
-                    <p>An energetic, physics-based action-arcade game featuring high-fidelity particle systems and deep campaign progression.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.smash.blocks" target="_blank" class="btn">View on Google Play</a>
-                </div>
-            </div>
 
-            <!-- 9. Tactical Watch Face -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="images/tactical_icon.jpg" alt="Tactical Watch Face">
+                <!-- 6. The Legacy Watch Face -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="images/legacy_icon.jpg" alt="The Legacy Watch Face">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Wear OS Watch Face</span>
+                        <h3>The Legacy Watch Face</h3>
+                        <p>A timeless blend of classic analog watchcraft styling coupled with modern complications and customization options.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.watchfacestudio.simple_watch" target="_blank" class="btn">View on Google Play</a>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <span class="tag">Wear OS Watch Face</span>
-                    <h3>Tactical Watch Face</h3>
-                    <p>A rugged watch face built for the outdoors with tactical data displays and high legibility.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.tactical" target="_blank" class="btn">View on Google Play</a>
+
+                <!-- 7. Tactical Watch Face -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="images/tactical_icon.jpg" alt="Tactical Watch Face">
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Wear OS Watch Face</span>
+                        <h3>Tactical Watch Face</h3>
+                        <p>A rugged watch face built for the outdoors with tactical data displays and high legibility.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.tactical" target="_blank" class="btn">View on Google Play</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
