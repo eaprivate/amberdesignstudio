@@ -65,7 +65,7 @@
             flex-wrap: wrap;
         }
 
-        .nav-links a {
+        .nav-links > a {
             text-decoration: none;
             color: var(--text-muted);
             font-size: 0.95rem;
@@ -73,14 +73,16 @@
             transition: color 0.2s ease;
         }
 
-        .nav-links a:hover {
+        .nav-links > a:hover {
             color: var(--primary);
         }
 
-        /* Dropdown Menu for Services */
+        /* Dropdown Menu for Services with bridge for hover stability */
         .dropdown {
             position: relative;
             display: inline-block;
+            padding-bottom: 10px; /* Creates an invisible bridge extending down to the menu */
+            margin-bottom: -10px;
         }
 
         .dropdown-toggle {
@@ -110,7 +112,6 @@
             z-index: 1;
             top: 100%;
             left: 0;
-            margin-top: 8px;
             padding: 8px 0;
         }
 
@@ -493,7 +494,7 @@
                 <!-- 1. Vinyl Watch Face -->
                 <div class="card">
                     <div class="card-img-wrapper">
-                        <img src="images/vinyl_icon.jpg" alt="Vinyl Watch Face">
+                        <img src="images/vinyl.jpg" alt="Vinyl Watch Face">
                     </div>
                     <div class="card-content">
                         <span class="tag">Wear OS Watch Face</span>
