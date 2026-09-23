@@ -1,1 +1,75 @@
+<!-- Footer -->
+    <footer class="py-12 border-t border-slate-900 bg-slate-950 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <!-- Social Icons -->
+            <div class="flex items-center justify-center space-x-6">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/arefsta" target="_blank" rel="noopener noreferrer" class="social-icon w-12 h-12 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-white hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 hover:border-transparent shadow-md transition-all" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram text-xl"></i>
+                </a>
+                
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/profile.php?id=61591867105583" target="_blank" rel="noopener noreferrer" class="social-icon w-12 h-12 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-white hover:bg-blue-600 hover:border-transparent shadow-md transition-all" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f text-xl"></i>
+                </a>
+                
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@AmberDesignStudio" target="_blank" rel="noopener noreferrer" class="social-icon w-12 h-12 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-white hover:bg-red-600 hover:border-transparent shadow-md transition-all" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube text-xl"></i>
+                </a>
+                
+                <!-- Behance -->
+                <a href="https://www.behance.net/arefsta" target="_blank" rel="noopener noreferrer" class="social-icon w-12 h-12 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-white hover:bg-blue-500 hover:border-transparent shadow-md transition-all" aria-label="Behance">
+                    <i class="fa-brands fa-behance text-xl"></i>
+                </a>
 
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/arefsta/" target="_blank" rel="noopener noreferrer" class="social-icon w-12 h-12 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-white hover:bg-sky-600 hover:border-transparent shadow-md transition-all" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in text-xl"></i>
+                </a>
+            </div>
+            
+            <!-- Copyright -->
+            <p>&copy; 2026 Amber Design Studio. All rights reserved.</p>
+            
+            <!-- Legal Links -->
+            <div class="flex flex-wrap items-center justify-center gap-6">
+                <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                <span class="text-slate-700">•</span>
+                <a href="terms-conditions.html" class="hover:text-white transition-colors">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Sliding Controls, Mobile Navigation, & Wheel Scrolling -->
+    <script>
+        // Toggle Mobile Menu Visibility
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        function scrollContainer(containerId, distance) {
+            const container = document.getElementById(containerId);
+            if (container) {
+                container.scrollBy({ left: distance, behavior: 'smooth' });
+            }
+        }
+
+        // Enable horizontal scrolling with the mouse wheel over scroll containers
+        document.querySelectorAll('.overflow-x-auto').forEach(container => {
+            container.addEventListener('wheel', (evt) => {
+                if (evt.deltaY !== 0) {
+                    evt.preventDefault();
+                    container.scrollLeft += evt.deltaY;
+                }
+            }, { passive: false });
+        });
+    </script>
+
+</body>
+</html>
