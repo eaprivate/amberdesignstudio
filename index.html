@@ -502,7 +502,7 @@
 
     <!-- JavaScript for Sliding Controls & Mobile Navigation -->
     <script>
-function scrollContainer(containerId, distance) {
+        function scrollContainer(containerId, distance) {
             const container = document.getElementById(containerId);
             if (container) {
                 container.scrollBy({ left: distance, behavior: 'smooth' });
@@ -516,7 +516,8 @@ function scrollContainer(containerId, distance) {
                     evt.preventDefault();
                     container.scrollLeft += evt.deltaY;
                 }
-            }
+            }, { passive: false });
+        });
     </script>
 
     
