@@ -187,30 +187,34 @@
 
     <!-- JavaScript for Mobile Drawer Toggle -->
     <script>
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileClose = document.getElementById('mobile-menu-close');
-        const mobileDrawer = document.getElementById('mobile-drawer');
-        const mobileBackdrop = document.getElementById('mobile-backdrop');
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileClose = document.getElementById('mobile-menu-close');
+            const mobileDrawer = document.getElementById('mobile-drawer');
+            const mobileBackdrop = document.getElementById('mobile-backdrop');
 
-        function openMobileMenu() {
-            mobileDrawer.classList.remove('translate-x-full');
-            mobileBackdrop.classList.remove('opacity-0', 'pointer-events-none');
-            document.body.style.overflow = 'hidden';
-        }
+            if (!mobileBtn || !mobileDrawer) return;
 
-        function closeMobileMenu() {
-            mobileDrawer.classList.add('translate-x-full');
-            mobileBackdrop.classList.add('opacity-0', 'pointer-events-none');
-            document.body.style.overflow = '';
-        }
+            function openMobileMenu() {
+                mobileDrawer.classList.remove('translate-x-full');
+                mobileBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'hidden';
+            }
 
-        mobileBtn.addEventListener('click', openMobileMenu);
-        mobileClose.addEventListener('click', closeMobileMenu);
-        mobileBackdrop.addEventListener('click', closeMobileMenu);
+            function closeMobileMenu() {
+                mobileDrawer.classList.add('translate-x-full');
+                mobileBackdrop.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = '';
+            }
 
-        // Auto-close drawer when clicking a link inside it
-        mobileDrawer.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
+            mobileBtn.addEventListener('click', openMobileMenu);
+            mobileClose.addEventListener('click', closeMobileMenu);
+            mobileBackdrop.addEventListener('click', closeMobileMenu);
+
+            // Auto-close drawer when clicking a link inside it
+            mobileDrawer.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
         });
     </script>
 </body>
