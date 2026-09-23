@@ -100,7 +100,7 @@
                                 </a>
 
                                 <a href="/amberdesignstudio/works.html#apps" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-slate-800/80 transition-colors group/item mt-1">
-                                    <div class="w-9 h-9 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 group-hover/item:bg-indigo-500 group-hover/item:text-white transition-colors">
+                                    <div class="w-9 h-9 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 group-hover/item:bg-indigo-500 group-hover:item:text-white transition-colors">
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
                                     </div>
                                     <div>
@@ -126,16 +126,16 @@
                     <a href="/amberdesignstudio/index.html#contact" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contact</a>
                 </nav>
 
-                <!-- CTA Button -->
-                <div class="hidden md: block">
+                <!-- Desktop CTA Button -->
+                <div class="hidden md:block">
                     <a href="/amberdesignstudio/index.html#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-indigo-500 to-violet-600 text-white font-medium text-sm shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all transform hover:-translate-y-0.5">
                         Get Started
                     </a>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <div class="md: hidden flex items-center">
-                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-900 focus:outline-none">
+                <!-- Mobile Menu Burger Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Open Menu" class="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 focus:outline-none transition-colors">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
                         </svg>
@@ -143,16 +143,75 @@
                 </div>
             </div>
         </div>
-
-        <!-- Mobile Navigation Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-b border-slate-800 px-4 pt-2 pb-6 space-y-2">
-            <a href="/amberdesignstudio/index.html#home" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-900 hover:text-white">Home</a>
-            <a href="/amberdesignstudio/index.htmlservices" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-900 hover:text-white">Services</a>
-            <div class="px-3 py-2 font-medium text-indigo-400 text-sm">Works Menu:</div>
-            <a href="works.html#watchfaces" class="block pl-6 pr-3 py-1.5 rounded-lg text-sm text-slate-400 hover:text-white">↳ Wear OS Watch Faces</a>
-            <a href="works.html#apps" class="block pl-6 pr-3 py-1.5 rounded-lg text-sm text-slate-400 hover:text-white">↳ Apps</a>
-            <a href="works.html#games" class="block pl-6 pr-3 py-1.5 rounded-lg text-sm text-slate-400 hover:text-white">↳ Games</a>
-            <a href="/amberdesignstudio/index.html#about" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-900 hover:text-white">About</a>
-            <a href="/amberdesignstudio/index.html#contact" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-900 hover:text-white">Contact</a>
-        </div>
     </header>
+
+    <!-- Mobile Backdrop Overlay -->
+    <div id="mobile-backdrop" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+
+    <!-- Mobile Sliding Drawer (Συρτάρι από τα δεξιά) -->
+    <div id="mobile-drawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-slate-900 border-l border-slate-800 z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col shadow-2xl">
+        
+        <!-- Drawer Header with Close Button -->
+        <div class="flex items-center justify-between p-6 border-b border-slate-800">
+            <span class="text-white font-bold text-lg">Menu</span>
+            <button id="mobile-menu-close" aria-label="Close Menu" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Drawer Links -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-3">
+            <a href="/amberdesignstudio/index.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800/80 hover:text-white transition-colors">Home</a>
+            <a href="/amberdesignstudio/index.html#services" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800/80 hover:text-white transition-colors">Services</a>
+            
+            <div class="pt-2 pb-1 px-4 text-xs font-semibold text-indigo-400 uppercase tracking-wider">Works</div>
+            <div class="pl-3 space-y-1 border-l border-slate-800 ml-4">
+                <a href="/amberdesignstudio/works.html#watchfaces" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/50 transition-colors">Wear OS Watch Faces</a>
+                <a href="/amberdesignstudio/works.html#apps" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/50 transition-colors">Apps</a>
+                <a href="/amberdesignstudio/works.html#games" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800/50 transition-colors">Games</a>
+            </div>
+
+            <a href="/amberdesignstudio/index.html#about" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800/80 hover:text-white transition-colors">About</a>
+            <a href="/amberdesignstudio/index.html#contact" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800/80 hover:text-white transition-colors">Contact</a>
+        </div>
+
+        <!-- Drawer Footer CTA -->
+        <div class="p-6 border-t border-slate-800 bg-slate-950/50">
+            <a href="/amberdesignstudio/index.html#contact" class="block w-full text-center py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-600 text-white font-medium text-sm shadow-lg shadow-indigo-500/25">
+                Get Started
+            </a>
+        </div>
+    </div>
+
+    <!-- JavaScript for Mobile Drawer Toggle -->
+    <script>
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileClose = document.getElementById('mobile-menu-close');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const mobileBackdrop = document.getElementById('mobile-backdrop');
+
+        function openMobileMenu() {
+            mobileDrawer.classList.remove('translate-x-full');
+            mobileBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileDrawer.classList.add('translate-x-full');
+            mobileBackdrop.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+        }
+
+        mobileBtn.addEventListener('click', openMobileMenu);
+        mobileClose.addEventListener('click', closeMobileMenu);
+        mobileBackdrop.addEventListener('click', closeMobileMenu);
+
+        // Auto-close drawer when clicking a link inside it
+        mobileDrawer.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    </script>
+</body>
+</html>
