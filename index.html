@@ -502,7 +502,21 @@
 
     <!-- JavaScript for Sliding Controls & Mobile Navigation -->
     <script>
+function scrollContainer(containerId, distance) {
+            const container = document.getElementById(containerId);
+            if (container) {
+                container.scrollBy({ left: distance, behavior: 'smooth' });
+            }
+        }
 
+        // Enable horizontal scrolling with the mouse wheel over scroll containers
+        document.querySelectorAll('.overflow-x-auto').forEach(container => {
+            container.addEventListener('wheel', (evt) => {
+                if (evt.deltaY !== 0) {
+                    evt.preventDefault();
+                    container.scrollLeft += evt.deltaY;
+                }
+            }
     </script>
 
     
